@@ -33,7 +33,7 @@ LINE_SPACING = 32.083335876464844
 FIRST_LINE_INDEX = 2          # Line 3 (y ~ 124.67) leaves comfortable top headroom
 MAX_BASELINE_Y = 1478.0       # ~43 lines per A4 page
 
-MARGIN_LEFT = 58.0
+MARGIN_LEFT = 29.0
 MARGIN_RIGHT = 58.0
 
 DESCENDER_CHARS = set("gjpqyßJç")
@@ -241,7 +241,7 @@ class HandwritingEngine:
         slope, wave_amp, wave_phase, left_jitter = make_line_drift()
         cursor_x = MARGIN_LEFT + left_jitter
 
-        def advance_line(lines: int = 2):
+        def advance_line(lines: int = 1):
             nonlocal current_page_idx, line_idx, cursor_x, slope, wave_amp, wave_phase, left_jitter
             line_idx += lines
             next_y = LINE_Y_START + line_idx * LINE_SPACING
